@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empreendimentos Digitais na Fisioterapia & Financiamento • Profa. Andréa Soares Rocha da Silva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0A3A60;
+      --primary-light: #185E96;
+      --primary-dark: #05223A;
+      --secondary: #0D9488;
+      --secondary-light: #14B8A6;
+      --secondary-soft: #F0FDFA;
+      --accent: #D97706;
+      --accent-light: #F59E0B;
+      --accent-soft: #FEF3C7;
+      --dark: #0F172A;
+      --gray-light: #F8FAFC;
+      --gray-border: #E2E8F0;
+      --text-main: #334155;
+      --text-muted: #64748B;
+      --card-bg: #FFFFFF;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.12);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F1F5F9;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 38px 34px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-card::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .author-badge-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .badge-author {
+      background: var(--secondary);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-inst {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #E2E8F0;
+    }
+
+    .title-group h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+    }
+
+    .title-group p.lead {
+      font-size: 1.05rem;
+      color: #CBD5E1;
+      max-width: 980px;
+      margin-bottom: 22px;
+    }
+
+    .pnp-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 4px solid var(--accent-light);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 24px;
+      font-size: 0.94rem;
+      color: #F8FAFC;
+    }
+
+    .pnp-box strong {
+      color: var(--accent-light);
+    }
+
+    /* KPI METRICS */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .kpi-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .kpi-card:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .kpi-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--secondary-light);
+    }
+
+    .kpi-lbl {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #CBD5E1;
+      margin-top: 2px;
+    }
+
+    /* SECTION BASICS */
+    .section-box {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-border);
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title .step-pill {
+      background: var(--primary);
+      color: #FFF;
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* MODELOS DE CONSTITUIÇÃO (CARDS INTERATIVOS) */
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .model-btn-card {
+      background: var(--gray-light);
+      border: 2px solid transparent;
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .model-btn-card:hover, .model-btn-card.active {
+      background: #FFFFFF;
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .model-badge-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--secondary-soft);
+      color: var(--secondary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .model-btn-card.active .model-badge-icon {
+      background: var(--secondary);
+      color: #FFFFFF;
+    }
+
+    .model-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .model-short {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .model-detail-panel {
+      background: var(--secondary-soft);
+      border: 1px solid #CCFBF1;
+      border-radius: var(--radius-md);
+      padding: 22px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .model-detail-panel h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      color: #0F766E;
+      margin-bottom: 8px;
+    }
+
+    .model-detail-panel p {
+      font-size: 0.88rem;
+      color: #115E59;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .model-ref-tag {
+      display: inline-block;
+      background: #FFFFFF;
+      color: #0F766E;
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #99F6E4;
+    }
+
+    /* TRÍADE DE INFOPRODUTOS */
+    .infoprod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .infoprod-card {
+      background: #FFFFFF;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .infoprod-card:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .infoprod-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: 12px;
+    }
+
+    .pill-paciente { background: #EFF6FF; color: #1D4ED8; }
+    .pill-pro { background: #F0FDF4; color: #15803D; }
+    .pill-saas { background: #FEF3C7; color: #B45309; }
+
+    .infoprod-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .infoprod-card p {
+      font-size: 0.84rem;
+      color: var(--text-main);
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .infoprod-features {
+      list-style: none;
+      padding: 0;
+      font-size: 0.8rem;
+      border-top: 1px dashed var(--gray-border);
+      padding-top: 10px;
+    }
+
+    .infoprod-features li {
+      padding: 3px 0;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .infoprod-features li::before {
+      content: '✔';
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    /* DESAFIOS ÉTICOS & LGPD (TABS) */
+    .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      padding: 10px 16px;
+      background: #F1F5F9;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn:hover {
+      background: #E2E8F0;
+      color: var(--primary);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-content {
+      background: var(--gray-light);
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    .tab-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .tab-content p {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .tab-highlight {
+      background: #FFFFFF;
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      color: #1E293B;
+    }
+
+    /* MATRIZ DE FINANCIAMENTO */
+    .finance-container {
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+
+    .finance-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.84rem;
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-border);
+    }
+
+    .finance-table th {
+      background: #092C48;
+      color: #FFFFFF;
+      padding: 14px 12px;
+      font-weight: 600;
+      text-align: left;
+      font-family: 'Space Grotesk', sans-serif;
+      border-bottom: 2px solid var(--secondary);
+    }
+
+    .finance-table td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--gray-border);
+      vertical-align: middle;
+      color: var(--text-main);
+    }
+
+    .finance-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+
+    .finance-table tr:hover td {
+      background: #F0FDFA;
+    }
+
+    .finance-type {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .finance-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .badge-no-reimb { background: #DCFCE7; color: #166534; }
+    .badge-equity { background: #FEE2E2; color: #991B1B; }
+    .badge-reward { background: #FEF3C7; color: #92400E; }
+    .badge-mentoring { background: #E0E7FF; color: #3730A3; }
+
+    /* MINI-CANVAS INTERATIVO */
+    .canvas-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .canvas-box {
+      background: #FFFFFF;
+      border: 1px solid var(--gray-border);
+      border-top: 4px solid var(--primary-light);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .canvas-box.accent-top {
+      border-top-color: var(--secondary);
+    }
+
+    .canvas-box.gold-top {
+      border-top-color: var(--accent);
+    }
+
+    .canvas-num {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .canvas-box h5 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin: 4px 0 8px;
+    }
+
+    .canvas-box p {
+      font-size: 0.8rem;
+      color: var(--text-main);
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+
+    .canvas-box small {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      display: block;
+      font-style: italic;
+    }
+
+    /* FOOTER & CRÉDITOS */
+    .footer-card {
+      background: #091D2D;
+      color: #94A3B8;
+      border-radius: var(--radius-lg);
+      padding: 34px 30px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
+      margin-bottom: 26px;
+    }
+
+    .footer-col h5 {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .footer-col p, .footer-col li {
+      font-size: 0.82rem;
+      color: #CBD5E1;
+      margin-bottom: 5px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .references-section {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 24px;
+      margin-top: 20px;
+    }
+
+    .references-header {
+      color: #F8FAFC;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      font-family: 'Space Grotesk', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ref-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ref-item {
+      font-size: 0.8rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+      padding-left: 14px;
+      text-indent: -14px;
+    }
+
+    .copyright-section {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 22px;
+      margin-top: 24px;
+    }
+
+    .copyright-header {
+      color: #F8FAFC;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .copyright-text {
+      color: #94A3B8;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .citation-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+
+    .citation-title {
+      font-weight: 700;
+      color: var(--secondary-light);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .citation-code {
+      font-family: monospace, monospace;
+      font-size: 0.8rem;
+      color: #E2E8F0;
+      word-break: break-all;
+      line-height: 1.45;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 16px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #64748B;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .header-card { padding: 24px 20px; }
+      .title-group h1 { font-size: 1.65rem; }
+      .section-box { padding: 20px; }
+      .tabs-nav { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header-card">
+    <div class="author-badge-top">
+      <span class="badge-author">Autoria: Andréa Soares Rocha da Silva</span>
+      <span class="badge-inst">Módulo de Gestão em Saúde</span>
+      <span class="badge-inst">Graduação em Fisioterapia</span>
+      <span class="badge-inst">Universidade Federal do Ceará (UFC)</span>
+    </div>
+
+    <div class="title-group">
+      <h1>Empreendimentos Digitais na Fisioterapia e suas Formas de Financiamento</h1>
+      <p class="lead">Recurso educacional digital voltado à apresentação de conceitos, modelos de constituição, aplicações de infoprodutos, desafios éticos e rotas de captação de recursos no ecossistema de inovação em saúde.</p>
+    </div>
+
+    <div class="pnp-box">
+      <strong>Pergunta Norteadora Principal:</strong> Como estruturar um empreendimento digital em Fisioterapia baseado em evidências científicas, viabilidade econômica e responsabilidade ética (LGPD/COFFITO), selecionando as fontes de financiamento mais estratégicas para cada estágio de maturidade?
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-val">5</div>
+        <div class="kpi-lbl">Modelos de Negócio</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">3</div>
+        <div class="kpi-lbl">Eixos de Infoprodutos</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">7+</div>
+        <div class="kpi-lbl">Fontes de Fomento</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">1</div>
+        <div class="kpi-lbl">Mini-Canvas Prático</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEÇÃO 1: MODELOS DE CONSTITUIÇÃO -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Eixo 1</span>
+      Modelos de Constituição de Empreendimentos Digitais em Fisioterapia
+    </h2>
+    <p class="section-desc">A escolha do modelo depende da infraestrutura tecnológica, do público-alvo e dos objetivos clínicos (SILVA, 2025). Clique em cada modelo para explorar sua operação e suporte científico:</p>
+
+    <div class="models-grid">
+      <div class="model-btn-card active" onclick="selectModel(0)">
+        <div class="model-badge-icon">🌐</div>
+        <div class="model-name">Telereabilitação</div>
+        <div class="model-short">Consultas, avaliação e prescrição remota</div>
+      </div>
+      <div class="model-btn-card" onclick="selectModel(1)">
+        <div class="model-badge-icon">📱</div>
+        <div class="model-name">Apps & Mobile</div>
+        <div class="model-short">Prescrição e monitoramento por software</div>
+      </div>
+      <div class="model-btn-card" onclick="selectModel(2)">
+        <div class="model-badge-icon">🕶️</div>
+        <div class="model-name">RV & Gamificação</div>
+        <div class="model-short">Ambientes virtuais e jogos terapêuticos</div>
+      </div>
+      <div class="model-btn-card" onclick="selectModel(3)">
+        <div class="model-badge-icon">🎓</div>
+        <div class="model-name">Ensino Digital</div>
+        <div class="model-short">Blended learning e flipped classroom</div>
+      </div>
+      <div class="model-btn-card" onclick="selectModel(4)">
+        <div class="model-badge-icon">🔄</div>
+        <div class="model-name">Modelos Híbridos</div>
+        <div class="model-short">Cuidado integrado presencial + digital</div>
+      </div>
+    </div>
+
+    <div class="model-detail-panel" id="modelDetailBox">
+      <!-- Conteúdo injetado via JS -->
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2: INFOPRODUTOS E ESCALABILIDADE -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Eixo 2</span>
+      Infoprodutos: A Engenharia da Escalabilidade em Saúde
+    </h2>
+    <p class="section-desc">Infoprodutos estruturam conhecimento especializado com custo marginal de distribuição quase nulo (SIMON, 2020). Na Fisioterapia, organizam-se em três grandes dimensões:</p>
+
+    <div class="infoprod-grid">
+      <div class="infoprod-card">
+        <span class="infoprod-pill pill-paciente">Dimensão 1</span>
+        <h4>Educação de Pacientes</h4>
+        <p>E-books, manuais e guias digitais voltados para ergonomia domiciliar, postura, prevenção de lesões e autocuidado no manejo da dor crônica.</p>
+        <ul class="infoprod-features">
+          <li>Aumenta o empoderamento do paciente</li>
+          <li>Melhora a adesão aos exercícios domiciliares</li>
+          <li>Ampla acessibilidade regional</li>
+        </ul>
+      </div>
+
+      <div class="infoprod-card">
+        <span class="infoprod-pill pill-pro">Dimensão 2</span>
+        <h4>Formação Profissional & Educação Permanente</h4>
+        <p>Cursos online, comunidades de prática, videoaulas autoexplicativas e podcasts especializados para capacitação técnica de fisioterapeutas (ØDEGAARD et al., 2021).</p>
+        <ul class="infoprod-features">
+          <li>Metodologias ativas e flipped classroom</li>
+          <li>Aquisição prática tão eficaz quanto o ensino tradicional</li>
+          <li>Atualização baseada em evidências científicas</li>
+        </ul>
+      </div>
+
+      <div class="infoprod-card">
+        <span class="infoprod-pill pill-saas">Dimensão 3</span>
+        <h4>Serviços Digitais Escaláveis (SaaS)</h4>
+        <p>Programas terapêuticos baseados em assinatura mensal, apps de biofeedback e algoritmos guiados para dores musculoesqueléticas (CUI et al., 2023).</p>
+        <ul class="infoprod-features">
+          <li>Receita recorrente previsível</li>
+          <li>Resultados clínicos comparáveis ao presencial</li>
+          <li>Acompanhamento longitudinal de alta escala</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: DESAFIOS ÉTICOS, LGPD & COFFITO -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Eixo 3</span>
+      Desafios Críticos, Regulação & Cuidados Éticos
+    </h2>
+    <p class="section-desc">Inovar na Fisioterapia digital exige equilíbrio entre tecnologia de ponta e responsabilidade profissional estrita (ESTEL et al., 2022; SILVA, 2025):</p>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="showTab('lgpd', this)">🔒 Privacidade de Dados (LGPD)</button>
+      <button class="tab-btn" onclick="showTab('coffito', this)">⚖️ Normas COFFITO & Ética</button>
+      <button class="tab-btn" onclick="showTab('remuneracao', this)">💰 Remuneração & Mercado</button>
+      <button class="tab-btn" onclick="showTab('adesao', this)">🎯 Engajamento & Retenção</button>
+    </div>
+
+    <div id="tabContentBox" class="tab-content">
+      <!-- Injetado via JS -->
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: MATRIZ DE FONTES DE FINANCIAMENTO -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Eixo 4</span>
+      Fontes de Financiamento para Startups e Inovações em Fisioterapia
+    </h2>
+    <p class="section-desc">Mapeamento de rotas de captação de recursos no ecossistema de saúde brasileiro e global, detalhando contrapartidas e exemplos reais (SILVA, 2025):</p>
+
+    <div class="finance-container">
+      <table class="finance-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Mecanismo de Fomento</th>
+            <th style="width: 32%;">Descrição e Finalidade</th>
+            <th style="width: 24%;">Contrapartida Exigida</th>
+            <th style="width: 22%;">Exemplo Prático</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="finance-type">Editais de Inovação Pública</td>
+            <td>Aporte financeiro direto para pesquisa aplicada e desenvolvimento sem devolução do capital.</td>
+            <td><span class="finance-badge badge-no-reimb">Não reembolsável</span><br>Prestação técnica e inovação</td>
+            <td><strong>FINEP Mais Inovação Saúde</strong></td>
+          </tr>
+          <tr>
+            <td class="finance-type">P&D Acadêmico & SUS</td>
+            <td>Fomento público ou institucional voltado a pesquisas científicas e extensão tecnológica.</td>
+            <td><span class="finance-badge badge-no-reimb">Relatórios & Artigos</span><br>Impacto social no SUS</td>
+            <td><strong>PET-Saúde Digital (UFC / MS)</strong></td>
+          </tr>
+          <tr>
+            <td class="finance-type">Incubadoras & Aceleradoras</td>
+            <td>Infraestrutura física/virtual, suporte metodológico, mentorias e redes de networking.</td>
+            <td><span class="finance-badge badge-mentoring">Equity parcial ou taxa</span><br>Compartilhamento de IP</td>
+            <td><strong>HealthTech Innovation (HIA) / Incubadoras Criativas</strong></td>
+          </tr>
+          <tr>
+            <td class="finance-type">Investimento-Anjo</td>
+            <td>Capital aportado por pessoas físicas em estágios iniciais, combinando investimento e smart money.</td>
+            <td><span class="finance-badge badge-equity">Participação Societária</span><br>Equity minoritário</td>
+            <td><strong>Alice Saúde (fase inicial)</strong></td>
+          </tr>
+          <tr>
+            <td class="finance-type">Venture Capital (VC) & CVC</td>
+            <td>Fundos de risco corporativos ou especializados focados em rápida tração e escalabilidade.</td>
+            <td><span class="finance-badge badge-equity">Equity & Governança</span><br>Expectativa de 10x ROI</td>
+            <td><strong>Optum Ventures na Kaia Health (US$ 8 mi)</strong></td>
+          </tr>
+          <tr>
+            <td class="finance-type">Crowdfunding Coletivo</td>
+            <td>Arrecadação comunitária aberta via plataformas digitais para validar produtos inovadores.</td>
+            <td><span class="finance-badge badge-reward">Recompensas simbólicas</span><br>Pré-venda ou equity</td>
+            <td><strong>Catarse / Kickante</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5: MINI-CANVAS DE IDEAÇÃO -->
+  <section class="section-box">
+    <h2 class="section-title">
+      <span class="step-pill">Atividade Prática</span>
+      Mini-Canvas de Empreendimento Digital em Fisioterapia
+    </h2>
+    <p class="section-desc">Roteiro metodológico integrado do e-book para os grupos estruturarem suas propostas de inovação no contexto do Módulo de Gestão em Saúde (SILVA, 2025):</p>
+
+    <div class="canvas-layout">
+      <div class="canvas-box">
+        <span class="canvas-num">Bloco 01</span>
+        <h5>Problema Real</h5>
+        <p>Identificação de dor crônica, barreira geográfica, baixa adesão ou custo operacional elevado.</p>
+        <small>Ex: Falta de acompanhamento pós-alta em dor lombar.</small>
+      </div>
+
+      <div class="canvas-box">
+        <span class="canvas-num">Bloco 02</span>
+        <h5>Público-Alvo</h5>
+        <p>Definição do nicho demográfico e comportamental beneficiado pelo serviço.</p>
+        <small>Ex: Profissionais em home office com dores posturais.</small>
+      </div>
+
+      <div class="canvas-box accent-top">
+        <span class="canvas-num">Bloco 03</span>
+        <h5>Solução Digital</h5>
+        <p>Definição do formato: App, plataforma web, infoproduto híbrido ou dispositivo conectado.</p>
+        <small>Ex: Aplicativo móvel com feedback por visão computacional.</small>
+      </div>
+
+      <div class="canvas-box accent-top">
+        <span class="canvas-num">Bloco 04</span>
+        <h5>Base Científica</h5>
+        <p>Ensaios clínicos, guidelines da OMS/sociedades e evidências metodológicas que validam a eficácia.</p>
+        <small>Ex: Protocolos validados por Cui et al. (2023).</small>
+      </div>
+
+      <div class="canvas-box gold-top">
+        <span class="canvas-num">Bloco 05</span>
+        <h5>Plataforma / Canal</h5>
+        <p>Ambiente onde o produto opera e é entregue com segurança e usabilidade.</p>
+        <small>Ex: Nuvem segura com criptografia ponta a ponta.</small>
+      </div>
+
+      <div class="canvas-box gold-top">
+        <span class="canvas-num">Bloco 06</span>
+        <h5>Modelo de Receita</h5>
+        <p>Estratégia de monetização: assinatura (SaaS), venda única, coparticipação ou editais.</p>
+        <small>Ex: Assinatura mensal B2C ou parceria B2B corporativa.</small>
+      </div>
+
+      <div class="canvas-box">
+        <span class="canvas-num">Bloco 07</span>
+        <h5>Diferencial Único</h5>
+        <p>Proposta de valor que supera soluções convencionais do mercado com ética e rigor.</p>
+        <small>Ex: Gamificação adaptativa e suporte humano síncrono.</small>
+      </div>
+
+      <div class="canvas-box">
+        <span class="canvas-num">Bloco 08</span>
+        <h5>Identidade Visual</h5>
+        <p>Esboço da interface de entrega, design de interação e experiência do usuário (UX).</p>
+        <small>Ex: Wireframe com dashboard intuitivo do progresso clínico.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & CRÉDITOS INSTITUCIONAIS -->
+  <footer class="footer-card">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Autoria & Responsabilidade</h5>
+        <p><strong>Andréa Soares Rocha da Silva</strong></p>
+        <p>Docente e Pesquisadora em Fisioterapia e Saúde Digital</p>
+        <p>Fortaleza — Ceará — 2025</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contexto Acadêmico</h5>
+        <p>• <strong>Módulo de Gestão em Saúde</strong></p>
+        <p>• Curso de Graduação em Fisioterapia</p>
+        <p>• Departamento de Fisioterapia</p>
+        <p>• Universidade Federal do Ceará (UFC)</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Eixos Transversais</h5>
+        <p>• Modelos Assistenciais Baseados em Evidências</p>
+        <p>• Economia de Infoprodutos e Escalabilidade</p>
+        <p>• Segurança de Dados (LGPD) e Normas COFFITO</p>
+        <p>• Roteiros de Captação e Editais Públicos (FINEP/SUS)</p>
+      </div>
+    </div>
+
+    <!-- REFERÊNCIAS ABNT -->
+    <div class="references-section">
+      <div class="references-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        Referências Bibliográficas Principais (Normas ABNT)
+      </div>
+      <ul class="ref-list">
+        <li class="ref-item">BERNHARDSSON, S. et al. Digital physiotherapy assessment vs conventional face-to-face physiotherapy assessment of patients with musculoskeletal disorders: a systematic review. <strong>PLOS ONE</strong>, v. 18, 2023.</li>
+        <li class="ref-item">CUI, D. et al. Randomized-controlled trial assessing a digital care program versus conventional physiotherapy for chronic low back pain. <strong>NPJ Digital Medicine</strong>, v. 6, n. 121, 2023.</li>
+        <li class="ref-item">ESTEL, K. et al. Potential of digitalization within physiotherapy: a comparative survey. <strong>BMC Health Services Research</strong>, v. 22, n. 496, 2022.</li>
+        <li class="ref-item">FINEP. Seleção pública - Mais Inovação Brasil - Saúde/ICTs. Brasília: FINEP, 2024.</li>
+        <li class="ref-item">KEEL, S. et al. Investigating the use of digital health tools in physiotherapy: facilitators and barriers. <strong>Physiotherapy Theory and Practice</strong>, v. 39, p. 1449-1468, 2022.</li>
+        <li class="ref-item">MUÑOZ-TOMÁS, M. et al. Telerehabilitation as a therapeutic exercise tool versus face-to-face physiotherapy: a systematic review. <strong>Int. J. Environ. Res. Public Health</strong>, v. 20, 2023.</li>
+        <li class="ref-item">ØDEGAARD, N. B. et al. Digital learning designs in physiotherapy education: a systematic review and meta-analysis. <strong>BMC Medical Education</strong>, v. 21, 2021.</li>
+        <li class="ref-item">SILVA, A. S. R. da. <strong>Empreendimentos digitais na fisioterapia e suas fontes de financiamento</strong>. Fortaleza: [s. n.], 2025. 21 p. e-book.</li>
+        <li class="ref-item">SIMON, A. <strong>Produtos digitais (infoprodutos)</strong>: definição, tipologia e mercado. Florianópolis: UFSC, 2020.</li>
+      </ul>
+    </div>
+
+    <!-- DECLARAÇÃO DE DIREITOS AUTORAIS E USO -->
+    <div class="copyright-section">
+      <div class="copyright-header">© 2025 Andréa Soares Rocha da Silva. Todos os direitos reservados.</div>
+      <p class="copyright-text">
+        Este infográfico interativo foi concebido e estruturado como recurso educacional digital para os estudantes da Graduação em Fisioterapia da Universidade Federal do Ceará (UFC), inserido no Módulo de Gestão em Saúde. É permitida sua utilização exclusivamente para fins acadêmicos e pedagógicos, sendo obrigatória a indicação explícita da autoria e das fontes originais. É proibida a reprodução parcial ou integral para fins comerciais sem a prévia autorização da autora.
+      </p>
+
+      <div class="citation-box">
+        <div class="citation-title">Como referenciar este material:</div>
+        <div class="citation-code">
+          SILVA, Andréa Soares Rocha da. Empreendimentos Digitais na Fisioterapia e suas Formas de Financiamento. Fortaleza: Universidade Federal do Ceará (UFC), 2025. Infográfico interativo.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Recurso Didático Digital Interativo • Fisioterapia & Gestão em Saúde • Fortaleza/CE.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // BANCO DE DADOS DOS MODELOS DE NEGÓCIO
+  const modelsData = [
+    {
+      title: "1. Telereabilitação",
+      desc: "Utiliza videoconferência, plataformas na nuvem e telemonitoramento para avaliação, prescrição e acompanhamento fisioterapêutico à distância. É amplamente empregada para condições musculoesqueléticas, cardíacas e neurológicas.",
+      ref: "Muñoz-Tomás et al., 2023; Cui et al., 2023; Bernhardsson et al., 2023",
+      impact: "Garante eficácia clínica similar ao presencial com elevada adesão em dor lombar e afecções crônicas."
+    },
+    {
+      title: "2. Aplicativos e Ferramentas Mobile",
+      desc: "Apps para prescrição de exercícios guiados, registro de dor diária, envio de notificações motivacionais e canal assíncrono entre fisioterapeuta e paciente.",
+      ref: "Keel et al., 2022; Baqai et al., 2018",
+      impact: "Facilita o microgerenciamento diário do tratamento e a personalização de protocolos clínicos."
+    },
+    {
+      title: "3. Realidade Virtual (RV) e Gamificação",
+      desc: "Ambientes virtuais imersivos e jogos digitais terapêuticos utilizados na reabilitação motora e cognitiva, transformando tarefas repetitivas em desafios dinâmicos.",
+      ref: "Covaciu et al., 2021; Baqai et al., 2018",
+      impact: "Especialmente efetivo no engajamento de crianças e na neurorreabilitação de pacientes com lesão encefálica."
+    },
+    {
+      title: "4. Plataformas de Ensino Digital",
+      desc: "Ambientes para educação continuada e treinamento acadêmico com abordagens de flipped classroom (sala de aula invertida) e blended learning (ensino híbrido).",
+      ref: "Ødegaard et al., 2021; Pagels et al., 2025; Varma et al., 2024",
+      impact: "Reduz a carga cognitiva dos alunos e potencializa a assimilação de habilidades práticas."
+    },
+    {
+      title: "5. Abordagens Híbridas (Blended Care)",
+      desc: "Combinação sinérgica de sessões presenciais no consultório com módulos de acompanhamento digital por aplicativo ou teleatendimento.",
+      ref: "Ødegaard et al., 2021; Cui et al., 2023",
+      impact: "Otimiza os custos operacionais da clínica, aumenta o alcance geográfico e previne abandonos."
+    }
+  ];
+
+  function selectModel(index) {
+    const cards = document.querySelectorAll('.model-btn-card');
+    cards.forEach((c, i) => c.classList.toggle('active', i === index));
+
+    const m = modelsData[index];
+    const container = document.getElementById('modelDetailBox');
+    container.innerHTML = `
+      <h4>${m.title}</h4>
+      <p>${m.desc}</p>
+      <p><strong>Impacto Clínico & Gestão:</strong> ${m.impact}</p>
+      <span class="model-ref-tag">Evidência: ${m.ref}</span>
+    `;
+  }
+
+  // BANCO DE DADOS DAS TABS ÉTICO-REGULATÓRIAS
+  const tabsData = {
+    lgpd: {
+      title: "Segurança e Proteção de Dados Sensíveis (LGPD)",
+      text: "Na fisioterapia digital, os registros clínicos, diagnósticos e medidas biométricas constituem dados ultra-sensíveis (Lei 13.709/2018). Um vazamento acarreta riscos imutáveis à vida do usuário. É indispensável aplicar criptografia de ponta a ponta, controle estrito de acessos, armazenamento seguro em servidores certificados e consentimento livre e informado.",
+      highlight: "O descumprimento não gera apenas penalidades pecuniárias, mas o encerramento das operações e processos de responsabilidade profissional perante os conselhos de classe."
+    },
+    coffito: {
+      title: "Normas do Conselho Federal (COFFITO) & Prática Baseada em Evidências",
+      text: "O atendimento digital e a telereabilitação são regulamentados pelo COFFITO. A mediação tecnológica não diminui a responsabilidade técnica do fisioterapeuta. Todo infoproduto ou app deve ter fundamentação científica comprovada, sendo vedadas promessas milagrosas sem respaldo e condutas que firam o código de deontologia.",
+      highlight: "Infoprodutos devem passar por revisão contínua e garantir a responsabilidade técnica explícita do profissional responsável pelo conteúdo."
+    },
+    remuneracao: {
+      title: "Remuneração Profissional e Sustentabilidade Financeira",
+      text: "Apesar da ampla aceitação dos pacientes, a falta de tabelas de honorários consolidadas para atendimentos virtuais e a resistência das operadoras de planos de saúde continuam sendo barreiras (ESTEL et al., 2022). O empreendedor deve desenhar modelos de precificação transparentes, baseados em valor entregue e economia de deslocamento.",
+      highlight: "A sustentabilidade da clínica digital exige modelos de monetização claros (B2C, planos mensais ou convênios corporativos)."
+    },
+    adesao: {
+      title: "Engajamento, Adesão Terapêutica e Redução de Churn",
+      text: "A automação isolada gera alto abandono após o entusiasmo inicial. Soluções de saúde digital de sucesso combinam interfaces amigáveis, gamificação com dopamina de reforço positivo, lembretes inteligentes e, crucialmente, pontos de contato humano do fisioterapeuta para validação do esforço.",
+      highlight: "A tecnologia serve de suporte à relação terapêutica; o acompanhamento do profissional é o maior fator de retenção do paciente."
+    }
+  };
+
+  function showTab(key, btnElement) {
+    const t = tabsData[key];
+    const container = document.getElementById('tabContentBox');
+
+    container.innerHTML = `
+      <h3>${t.title}</h3>
+      <p>${t.text}</p>
+      <div class="tab-highlight"><strong>Atenção Gestora:</strong> ${t.highlight}</div>
+    `;
+
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    if(btnElement) btnElement.classList.add('active');
+  }
+
+  // Render inicial
+  selectModel(0);
+  showTab('lgpd', document.querySelector('.tab-btn.active'));
+</script>
+
+</body>
+</html>
